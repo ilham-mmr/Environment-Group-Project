@@ -24,7 +24,11 @@ public class MainFrame extends javax.swing.JFrame {
      */
     public MainFrame() {
         initComponents();
-       
+        FruitPanel fruitPanel = new FruitPanel();
+        fruitBasePanel.add(fruitPanel, "card2");
+        WetMarketTestPanel wetMarketTestPanel = new WetMarketTestPanel();
+        wetMarketBasePanel.add(wetMarketTestPanel,"card 1");
+
     }
 
     /**
@@ -56,29 +60,8 @@ public class MainFrame extends javax.swing.JFrame {
         jLabel12 = new javax.swing.JLabel();
         contentPanel = new javax.swing.JPanel();
         wetMarketBasePanel = new javax.swing.JPanel();
-        addWetMarketPanel = new javax.swing.JPanel();
-        addPanel = new javax.swing.JPanel();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        dateChooserCombo1 = new datechooser.beans.DateChooserCombo();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel16 = new javax.swing.JLabel();
-        jRadioButton2 = new javax.swing.JRadioButton();
-        jTextField4 = new javax.swing.JTextField();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel15 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        nextStatisticBtn = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        statisticMarketPanel = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        fruitPanel = new javax.swing.JPanel();
-        jLabel6 = new javax.swing.JLabel();
-        flowersPanel = new javax.swing.JPanel();
-        jLabel17 = new javax.swing.JLabel();
+        fruitBasePanel = new javax.swing.JPanel();
+        flowersBasePanel = new javax.swing.JPanel();
         bookPanel = new javax.swing.JPanel();
         jLabel18 = new javax.swing.JLabel();
         foodPanel = new javax.swing.JPanel();
@@ -87,7 +70,7 @@ public class MainFrame extends javax.swing.JFrame {
         jLabel14.setText("jLabel14");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(800, 600));
+        setResizable(false);
 
         basePanel.setBackground(new java.awt.Color(45, 52, 54));
 
@@ -426,254 +409,35 @@ public class MainFrame extends javax.swing.JFrame {
 
         contentPanel.setBackground(new java.awt.Color(44, 62, 80));
         contentPanel.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.lightGray, java.awt.Color.lightGray, java.awt.Color.lightGray, java.awt.Color.lightGray));
+        contentPanel.setMaximumSize(new java.awt.Dimension(500, 700));
         contentPanel.setLayout(new java.awt.CardLayout());
 
         wetMarketBasePanel.setBackground(new java.awt.Color(44, 62, 80));
+        wetMarketBasePanel.setPreferredSize(new java.awt.Dimension(700, 500));
         wetMarketBasePanel.setLayout(new java.awt.CardLayout());
-
-        addWetMarketPanel.setBackground(new java.awt.Color(44, 62, 80));
-
-        addPanel.setBackground(new java.awt.Color(44, 62, 80));
-        addPanel.setBorder(javax.swing.BorderFactory.createTitledBorder("FORM"));
-
-        jRadioButton1.setFont(new java.awt.Font("Dialog", 1, 10)); // NOI18N
-        jRadioButton1.setText("POSITIVE");
-
-        jLabel5.setText("TESTING DATE:");
-
-        jLabel16.setText("COVID-19 RESULT:");
-
-        jRadioButton2.setFont(new java.awt.Font("Dialog", 1, 10)); // NOI18N
-        jRadioButton2.setText("NEGATIVE");
-
-        jTextField4.setText("jTextField4");
-
-        jLabel4.setText("TYPE OF ANIMAL:");
-
-        jLabel13.setText("LOCATION:");
-
-        jTextField2.setText("jTextField2");
-
-        jTextField3.setText("jTextField3");
-
-        jLabel3.setText("WET MARKET NAME:");
-
-        jLabel15.setText("TESTING ID:");
-
-        jTextField1.setText("jTextField1");
-
-        javax.swing.GroupLayout addPanelLayout = new javax.swing.GroupLayout(addPanel);
-        addPanel.setLayout(addPanelLayout);
-        addPanelLayout.setHorizontalGroup(
-            addPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(addPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(addPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel15)
-                    .addComponent(jLabel13)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel16)
-                    .addComponent(jLabel5))
-                .addGap(27, 27, 27)
-                .addGroup(addPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(addPanelLayout.createSequentialGroup()
-                        .addComponent(jRadioButton2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, Short.MAX_VALUE)
-                        .addComponent(jRadioButton1))
-                    .addGroup(addPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jTextField3, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jTextField2, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jTextField4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(dateChooserCombo1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap())
-        );
-        addPanelLayout.setVerticalGroup(
-            addPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(addPanelLayout.createSequentialGroup()
-                .addGap(30, 30, 30)
-                .addGroup(addPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel15)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(16, 16, 16)
-                .addGroup(addPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(addPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel13)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(addPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(addPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jRadioButton2)
-                    .addComponent(jLabel16)
-                    .addComponent(jRadioButton1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(addPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel5)
-                    .addComponent(dateChooserCombo1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(45, 45, 45))
-        );
-
-        nextStatisticBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/environment/view/icons/next_page_24px.png"))); // NOI18N
-        nextStatisticBtn.setText("STATISTICS");
-        nextStatisticBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                nextStatisticBtnActionPerformed(evt);
-            }
-        });
-
-        jButton2.setText("ADD");
-
-        javax.swing.GroupLayout addWetMarketPanelLayout = new javax.swing.GroupLayout(addWetMarketPanel);
-        addWetMarketPanel.setLayout(addWetMarketPanelLayout);
-        addWetMarketPanelLayout.setHorizontalGroup(
-            addWetMarketPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, addWetMarketPanelLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(nextStatisticBtn)
-                .addGap(28, 28, 28))
-            .addGroup(addWetMarketPanelLayout.createSequentialGroup()
-                .addGroup(addWetMarketPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(addWetMarketPanelLayout.createSequentialGroup()
-                        .addGap(122, 122, 122)
-                        .addComponent(addPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(addWetMarketPanelLayout.createSequentialGroup()
-                        .addGap(173, 173, 173)
-                        .addComponent(jButton2)))
-                .addContainerGap(144, Short.MAX_VALUE))
-        );
-        addWetMarketPanelLayout.setVerticalGroup(
-            addWetMarketPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(addWetMarketPanelLayout.createSequentialGroup()
-                .addGap(16, 16, 16)
-                .addComponent(nextStatisticBtn)
-                .addGap(55, 55, 55)
-                .addComponent(addPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jButton2)
-                .addContainerGap(111, Short.MAX_VALUE))
-        );
-
-        wetMarketBasePanel.add(addWetMarketPanel, "card2");
-
-        statisticMarketPanel.setBackground(new java.awt.Color(44, 62, 80));
-
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/environment/view/icons/chevron_left_24px.png"))); // NOI18N
-        jButton1.setText("FORM PANEL");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout statisticMarketPanelLayout = new javax.swing.GroupLayout(statisticMarketPanel);
-        statisticMarketPanel.setLayout(statisticMarketPanelLayout);
-        statisticMarketPanelLayout.setHorizontalGroup(
-            statisticMarketPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(statisticMarketPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jButton1)
-                .addContainerGap(480, Short.MAX_VALUE))
-        );
-        statisticMarketPanelLayout.setVerticalGroup(
-            statisticMarketPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(statisticMarketPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jButton1)
-                .addContainerGap(538, Short.MAX_VALUE))
-        );
-
-        wetMarketBasePanel.add(statisticMarketPanel, "card3");
-
         contentPanel.add(wetMarketBasePanel, "card2");
 
-        jLabel6.setText("YOU ARE IN FRUIT PANEL");
+        fruitBasePanel.setPreferredSize(new java.awt.Dimension(700, 500));
+        fruitBasePanel.setLayout(new java.awt.CardLayout());
+        contentPanel.add(fruitBasePanel, "card3");
 
-        javax.swing.GroupLayout fruitPanelLayout = new javax.swing.GroupLayout(fruitPanel);
-        fruitPanel.setLayout(fruitPanelLayout);
-        fruitPanelLayout.setHorizontalGroup(
-            fruitPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, fruitPanelLayout.createSequentialGroup()
-                .addContainerGap(186, Short.MAX_VALUE)
-                .addComponent(jLabel6)
-                .addGap(285, 285, 285))
-        );
-        fruitPanelLayout.setVerticalGroup(
-            fruitPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(fruitPanelLayout.createSequentialGroup()
-                .addGap(277, 277, 277)
-                .addComponent(jLabel6)
-                .addContainerGap(291, Short.MAX_VALUE))
-        );
+        flowersBasePanel.setPreferredSize(new java.awt.Dimension(700, 500));
+        flowersBasePanel.setLayout(new java.awt.CardLayout());
+        contentPanel.add(flowersBasePanel, "card4");
 
-        contentPanel.add(fruitPanel, "card3");
-
-        jLabel17.setText("YOU ARE IN FLOWERS PANEL");
-
-        javax.swing.GroupLayout flowersPanelLayout = new javax.swing.GroupLayout(flowersPanel);
-        flowersPanel.setLayout(flowersPanelLayout);
-        flowersPanelLayout.setHorizontalGroup(
-            flowersPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(flowersPanelLayout.createSequentialGroup()
-                .addGap(249, 249, 249)
-                .addComponent(jLabel17)
-                .addContainerGap(198, Short.MAX_VALUE))
-        );
-        flowersPanelLayout.setVerticalGroup(
-            flowersPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(flowersPanelLayout.createSequentialGroup()
-                .addGap(247, 247, 247)
-                .addComponent(jLabel17)
-                .addContainerGap(321, Short.MAX_VALUE))
-        );
-
-        contentPanel.add(flowersPanel, "card4");
+        bookPanel.setPreferredSize(new java.awt.Dimension(700, 500));
+        bookPanel.setLayout(new java.awt.CardLayout());
 
         jLabel18.setText("YOU ARE IN BOOK PANEL");
-
-        javax.swing.GroupLayout bookPanelLayout = new javax.swing.GroupLayout(bookPanel);
-        bookPanel.setLayout(bookPanelLayout);
-        bookPanelLayout.setHorizontalGroup(
-            bookPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(bookPanelLayout.createSequentialGroup()
-                .addGap(274, 274, 274)
-                .addComponent(jLabel18)
-                .addContainerGap(196, Short.MAX_VALUE))
-        );
-        bookPanelLayout.setVerticalGroup(
-            bookPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(bookPanelLayout.createSequentialGroup()
-                .addGap(244, 244, 244)
-                .addComponent(jLabel18)
-                .addContainerGap(324, Short.MAX_VALUE))
-        );
+        bookPanel.add(jLabel18, "card2");
 
         contentPanel.add(bookPanel, "card5");
 
-        jLabel19.setText("YOU ARE IN FOOD PANEL");
+        foodPanel.setPreferredSize(new java.awt.Dimension(700, 500));
+        foodPanel.setLayout(new java.awt.CardLayout());
 
-        javax.swing.GroupLayout foodPanelLayout = new javax.swing.GroupLayout(foodPanel);
-        foodPanel.setLayout(foodPanelLayout);
-        foodPanelLayout.setHorizontalGroup(
-            foodPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(foodPanelLayout.createSequentialGroup()
-                .addGap(269, 269, 269)
-                .addComponent(jLabel19)
-                .addContainerGap(203, Short.MAX_VALUE))
-        );
-        foodPanelLayout.setVerticalGroup(
-            foodPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, foodPanelLayout.createSequentialGroup()
-                .addContainerGap(288, Short.MAX_VALUE)
-                .addComponent(jLabel19)
-                .addGap(280, 280, 280))
-        );
+        jLabel19.setText("YOU ARE IN FOOD PANEL");
+        foodPanel.add(jLabel19, "card2");
 
         contentPanel.add(foodPanel, "card6");
 
@@ -684,16 +448,16 @@ public class MainFrame extends javax.swing.JFrame {
             .addGroup(basePanelLayout.createSequentialGroup()
                 .addComponent(menuPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(contentPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(contentPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 720, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         basePanelLayout.setVerticalGroup(
             basePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(menuPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, basePanelLayout.createSequentialGroup()
+            .addGroup(basePanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(contentPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(contentPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 520, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -704,10 +468,12 @@ public class MainFrame extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(basePanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(basePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
-        pack();
+        setSize(new java.awt.Dimension(909, 571));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -722,19 +488,19 @@ public class MainFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_wetMarketBtnMouseClicked
 //[41,128,185]
     private void wetMarketBtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_wetMarketBtnMouseEntered
-        wetMarketBtn.setBackground(new Color(28,115,172));
+        wetMarketBtn.setBackground(new Color(28, 115, 172));
     }//GEN-LAST:event_wetMarketBtnMouseEntered
 
     private void wetMarketBtnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_wetMarketBtnMouseExited
-        wetMarketBtn.setBackground(new Color(41,128,185));
+        wetMarketBtn.setBackground(new Color(41, 128, 185));
     }//GEN-LAST:event_wetMarketBtnMouseExited
 
     private void wetMarketBtnMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_wetMarketBtnMousePressed
-        wetMarketBtn.setBackground(new Color(16,103,160));
+        wetMarketBtn.setBackground(new Color(16, 103, 160));
     }//GEN-LAST:event_wetMarketBtnMousePressed
 
     private void wetMarketBtnMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_wetMarketBtnMouseReleased
-        wetMarketBtn.setBackground(new Color(41,128,185));
+        wetMarketBtn.setBackground(new Color(41, 128, 185));
     }//GEN-LAST:event_wetMarketBtnMouseReleased
 
     private void fruitBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_fruitBtnMouseClicked
@@ -742,25 +508,25 @@ public class MainFrame extends javax.swing.JFrame {
         contentPanel.repaint();
         contentPanel.revalidate();
 
-        contentPanel.add(fruitPanel);
+        contentPanel.add(fruitBasePanel);
         contentPanel.repaint();
         contentPanel.revalidate();
     }//GEN-LAST:event_fruitBtnMouseClicked
 
     private void fruitBtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_fruitBtnMouseEntered
-         fruitBtn.setBackground(new Color(28,115,172));
+        fruitBtn.setBackground(new Color(28, 115, 172));
     }//GEN-LAST:event_fruitBtnMouseEntered
 
     private void fruitBtnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_fruitBtnMouseExited
-        fruitBtn.setBackground(new Color(41,128,185));
+        fruitBtn.setBackground(new Color(41, 128, 185));
     }//GEN-LAST:event_fruitBtnMouseExited
 
     private void fruitBtnMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_fruitBtnMousePressed
-         fruitBtn.setBackground(new Color(16,103,160));
+        fruitBtn.setBackground(new Color(16, 103, 160));
     }//GEN-LAST:event_fruitBtnMousePressed
 
     private void fruitBtnMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_fruitBtnMouseReleased
-         fruitBtn.setBackground(new Color(41,128,185));
+        fruitBtn.setBackground(new Color(41, 128, 185));
     }//GEN-LAST:event_fruitBtnMouseReleased
 
     private void flowerBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_flowerBtnMouseClicked
@@ -768,25 +534,25 @@ public class MainFrame extends javax.swing.JFrame {
         contentPanel.repaint();
         contentPanel.revalidate();
 
-        contentPanel.add(flowersPanel);
+        contentPanel.add(flowersBasePanel);
         contentPanel.repaint();
         contentPanel.revalidate();
     }//GEN-LAST:event_flowerBtnMouseClicked
 
     private void flowerBtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_flowerBtnMouseEntered
-        flowerBtn.setBackground(new Color(28,115,172));
+        flowerBtn.setBackground(new Color(28, 115, 172));
     }//GEN-LAST:event_flowerBtnMouseEntered
 
     private void flowerBtnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_flowerBtnMouseExited
-        flowerBtn.setBackground(new Color(41,128,185));
+        flowerBtn.setBackground(new Color(41, 128, 185));
     }//GEN-LAST:event_flowerBtnMouseExited
 
     private void flowerBtnMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_flowerBtnMousePressed
-        flowerBtn.setBackground(new Color(16,103,160));
+        flowerBtn.setBackground(new Color(16, 103, 160));
     }//GEN-LAST:event_flowerBtnMousePressed
 
     private void flowerBtnMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_flowerBtnMouseReleased
-        flowerBtn.setBackground(new Color(41,128,185));
+        flowerBtn.setBackground(new Color(41, 128, 185));
     }//GEN-LAST:event_flowerBtnMouseReleased
 
     private void bookBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bookBtnMouseClicked
@@ -800,19 +566,19 @@ public class MainFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_bookBtnMouseClicked
 
     private void bookBtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bookBtnMouseEntered
-        bookBtn.setBackground(new Color(28,115,172));
+        bookBtn.setBackground(new Color(28, 115, 172));
     }//GEN-LAST:event_bookBtnMouseEntered
 
     private void bookBtnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bookBtnMouseExited
-        bookBtn.setBackground(new Color(41,128,185));
+        bookBtn.setBackground(new Color(41, 128, 185));
     }//GEN-LAST:event_bookBtnMouseExited
 
     private void bookBtnMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bookBtnMousePressed
-        bookBtn.setBackground(new Color(16,103,160));
+        bookBtn.setBackground(new Color(16, 103, 160));
     }//GEN-LAST:event_bookBtnMousePressed
 
     private void bookBtnMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bookBtnMouseReleased
-        bookBtn.setBackground(new Color(41,128,185));
+        bookBtn.setBackground(new Color(41, 128, 185));
     }//GEN-LAST:event_bookBtnMouseReleased
 
     private void foodBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_foodBtnMouseClicked
@@ -826,19 +592,19 @@ public class MainFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_foodBtnMouseClicked
 
     private void foodBtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_foodBtnMouseEntered
-         foodBtn.setBackground(new Color(28,115,172));
+        foodBtn.setBackground(new Color(28, 115, 172));
     }//GEN-LAST:event_foodBtnMouseEntered
 
     private void foodBtnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_foodBtnMouseExited
-        foodBtn.setBackground(new Color(41,128,185));
+        foodBtn.setBackground(new Color(41, 128, 185));
     }//GEN-LAST:event_foodBtnMouseExited
 
     private void foodBtnMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_foodBtnMousePressed
-        foodBtn.setBackground(new Color(16,103,160));
+        foodBtn.setBackground(new Color(16, 103, 160));
     }//GEN-LAST:event_foodBtnMousePressed
 
     private void foodBtnMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_foodBtnMouseReleased
-        foodBtn.setBackground(new Color(41,128,185));
+        foodBtn.setBackground(new Color(41, 128, 185));
     }//GEN-LAST:event_foodBtnMouseReleased
 
     private void exitBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitBtnMouseClicked
@@ -846,40 +612,20 @@ public class MainFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_exitBtnMouseClicked
 
     private void exitBtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitBtnMouseEntered
-        exitBtn.setBackground(new Color(218,63,47));
+        exitBtn.setBackground(new Color(218, 63, 47));
     }//GEN-LAST:event_exitBtnMouseEntered
 
     private void exitBtnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitBtnMouseExited
-        exitBtn.setBackground(new Color(231,76,60));
+        exitBtn.setBackground(new Color(231, 76, 60));
     }//GEN-LAST:event_exitBtnMouseExited
 
     private void exitBtnMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitBtnMousePressed
-        exitBtn.setBackground(new Color(206,51,35));
+        exitBtn.setBackground(new Color(206, 51, 35));
     }//GEN-LAST:event_exitBtnMousePressed
 
     private void exitBtnMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitBtnMouseReleased
-        exitBtn.setBackground(new Color(231,76,60));
+        exitBtn.setBackground(new Color(231, 76, 60));
     }//GEN-LAST:event_exitBtnMouseReleased
-
-    private void nextStatisticBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nextStatisticBtnActionPerformed
-        wetMarketBasePanel.removeAll();
-        wetMarketBasePanel.repaint();
-        wetMarketBasePanel.revalidate();
-
-        wetMarketBasePanel.add(statisticMarketPanel);
-        wetMarketBasePanel.repaint();
-        wetMarketBasePanel.revalidate();
-    }//GEN-LAST:event_nextStatisticBtnActionPerformed
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        wetMarketBasePanel.removeAll();
-        wetMarketBasePanel.repaint();
-        wetMarketBasePanel.revalidate();
-
-        wetMarketBasePanel.add(addWetMarketPanel);
-        wetMarketBasePanel.repaint();
-        wetMarketBasePanel.revalidate();
-    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -917,52 +663,30 @@ public class MainFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel addPanel;
-    private javax.swing.JPanel addWetMarketPanel;
     private javax.swing.JPanel basePanel;
     private javax.swing.JPanel bookBtn;
     private javax.swing.JPanel bookPanel;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JPanel contentPanel;
-    private datechooser.beans.DateChooserCombo dateChooserCombo1;
     private javax.swing.JPanel exitBtn;
     private javax.swing.JPanel flowerBtn;
-    private javax.swing.JPanel flowersPanel;
+    private javax.swing.JPanel flowersBasePanel;
     private javax.swing.JPanel foodBtn;
     private javax.swing.JPanel foodPanel;
+    private javax.swing.JPanel fruitBasePanel;
     private javax.swing.JPanel fruitBtn;
-    private javax.swing.JPanel fruitPanel;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel8;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton2;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
     private javax.swing.JPanel menuPanel;
-    private javax.swing.JButton nextStatisticBtn;
-    private javax.swing.JPanel statisticMarketPanel;
     private javax.swing.JPanel wetMarketBasePanel;
     private javax.swing.JPanel wetMarketBtn;
     // End of variables declaration//GEN-END:variables
