@@ -3,11 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.environment.view;
+package com.environment.view.wetmarketinterface;
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.io.FileReader;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
@@ -17,6 +19,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
+import java.util.StringTokenizer;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
@@ -38,6 +41,8 @@ public class WetMarketTestPanel extends javax.swing.JPanel {
      * Creates new form wetMarketTestPanel
      */
     private List<WetMarketTest> testList;
+    private final String USERNAME = "ilham_mmr";
+    private final String PASSWORD = "myadmin";
 
     public WetMarketTestPanel() {
         initComponents();
@@ -98,6 +103,14 @@ public class WetMarketTestPanel extends javax.swing.JPanel {
     private void initComponents() {
 
         buttonGroup1 = new javax.swing.ButtonGroup();
+        loginPanel = new javax.swing.JPanel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        usernameField = new javax.swing.JTextField();
+        passwordField = new javax.swing.JPasswordField();
+        loginBtn = new javax.swing.JButton();
+        loginNotifier = new javax.swing.JLabel();
         addWetMarketPanel = new javax.swing.JPanel();
         addPanel = new javax.swing.JPanel();
         jRadioButton1 = new javax.swing.JRadioButton();
@@ -115,9 +128,10 @@ public class WetMarketTestPanel extends javax.swing.JPanel {
         idField = new javax.swing.JTextField();
         addBtn = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        helloLabel = new javax.swing.JLabel();
         nextStatisticBtn = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
+        logoutBtn = new javax.swing.JLabel();
         statPanel = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
@@ -125,19 +139,81 @@ public class WetMarketTestPanel extends javax.swing.JPanel {
         updateBtn = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
-        jPanel1 = new javax.swing.JPanel();
-        jButton2 = new javax.swing.JButton();
         barChartBtn = new javax.swing.JButton();
         jLabel11 = new javax.swing.JLabel();
-        loginPanel = new javax.swing.JPanel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        jTextField5 = new javax.swing.JTextField();
-        jPasswordField1 = new javax.swing.JPasswordField();
 
         setMaximumSize(new java.awt.Dimension(500, 700));
         setLayout(new java.awt.CardLayout());
+
+        loginPanel.setBackground(new java.awt.Color(44, 62, 80));
+
+        jLabel8.setFont(new java.awt.Font("Dubai", 1, 24)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/environment/view/icons/system_administrator_male_64px.png"))); // NOI18N
+        jLabel8.setText("LOGIN");
+
+        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel9.setText("Username:");
+
+        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel10.setText("Password:");
+
+        loginBtn.setBackground(new java.awt.Color(19, 37, 55));
+        loginBtn.setForeground(new java.awt.Color(255, 255, 255));
+        loginBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/environment/view/icons/login_32px.png"))); // NOI18N
+        loginBtn.setText("LOGIN");
+        loginBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                loginBtnActionPerformed(evt);
+            }
+        });
+
+        loginNotifier.setFont(new java.awt.Font("Dubai", 1, 12)); // NOI18N
+        loginNotifier.setForeground(new java.awt.Color(255, 255, 255));
+
+        javax.swing.GroupLayout loginPanelLayout = new javax.swing.GroupLayout(loginPanel);
+        loginPanel.setLayout(loginPanelLayout);
+        loginPanelLayout.setHorizontalGroup(
+            loginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, loginPanelLayout.createSequentialGroup()
+                .addGap(179, 179, 179)
+                .addGroup(loginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel9)
+                    .addComponent(jLabel10))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
+                .addGroup(loginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(loginNotifier)
+                    .addGroup(loginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(jLabel8)
+                        .addComponent(usernameField)
+                        .addComponent(passwordField, javax.swing.GroupLayout.DEFAULT_SIZE, 166, Short.MAX_VALUE)))
+                .addGap(260, 260, 260))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, loginPanelLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(loginBtn)
+                .addGap(251, 251, 251))
+        );
+        loginPanelLayout.setVerticalGroup(
+            loginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(loginPanelLayout.createSequentialGroup()
+                .addGap(105, 105, 105)
+                .addComponent(jLabel8)
+                .addGap(66, 66, 66)
+                .addGroup(loginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel9)
+                    .addComponent(usernameField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(loginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel10)
+                    .addComponent(passwordField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(loginNotifier)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 78, Short.MAX_VALUE)
+                .addComponent(loginBtn)
+                .addGap(74, 74, 74))
+        );
+
+        add(loginPanel, "card4");
 
         addWetMarketPanel.setBackground(new java.awt.Color(44, 62, 80));
 
@@ -254,16 +330,17 @@ public class WetMarketTestPanel extends javax.swing.JPanel {
                     .addComponent(dateChooserCombo1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(addBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(41, Short.MAX_VALUE))
         );
 
         jLabel1.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(204, 204, 204));
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/environment/view/icons/virus_32px.png"))); // NOI18N
-        jLabel1.setText("TESTING OF WET MARKET ");
+        jLabel1.setText("COVID-19 TEST IN WET MARKETS");
 
-        jLabel2.setForeground(new java.awt.Color(204, 204, 204));
-        jLabel2.setText("HELLO,.....");
+        helloLabel.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        helloLabel.setForeground(new java.awt.Color(204, 204, 204));
+        helloLabel.setText("HELLO,.....");
 
         nextStatisticBtn.setBackground(new java.awt.Color(41, 128, 185));
         nextStatisticBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/environment/view/icons/next_page_24px.png"))); // NOI18N
@@ -274,6 +351,17 @@ public class WetMarketTestPanel extends javax.swing.JPanel {
         });
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/environment/view/icons/hello_32px.png"))); // NOI18N
+
+        logoutBtn.setFont(new java.awt.Font("Dubai", 1, 14)); // NOI18N
+        logoutBtn.setForeground(new java.awt.Color(255, 255, 255));
+        logoutBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/environment/view/icons/logout_rounded_left_32px.png"))); // NOI18N
+        logoutBtn.setText("LOG OUT");
+        logoutBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        logoutBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                logoutBtnMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout addWetMarketPanelLayout = new javax.swing.GroupLayout(addWetMarketPanel);
         addWetMarketPanel.setLayout(addWetMarketPanelLayout);
@@ -288,10 +376,12 @@ public class WetMarketTestPanel extends javax.swing.JPanel {
                         .addGap(55, 55, 55)
                         .addComponent(jLabel6)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel2)))
+                        .addComponent(helloLabel)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, addWetMarketPanelLayout.createSequentialGroup()
-                .addGap(0, 131, Short.MAX_VALUE)
+            .addGroup(addWetMarketPanelLayout.createSequentialGroup()
+                .addGap(14, 14, 14)
+                .addComponent(logoutBtn)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
                 .addGroup(addWetMarketPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, addWetMarketPanelLayout.createSequentialGroup()
                         .addComponent(addPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -308,12 +398,18 @@ public class WetMarketTestPanel extends javax.swing.JPanel {
                 .addGap(27, 27, 27)
                 .addGroup(addWetMarketPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel6)
-                    .addComponent(jLabel2))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(addPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(nextStatisticBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(1, 1, 1))
+                    .addComponent(helloLabel))
+                .addGroup(addWetMarketPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(addWetMarketPanelLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(addPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(nextStatisticBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(1, 1, 1))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, addWetMarketPanelLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(logoutBtn)
+                        .addGap(18, 18, 18))))
         );
 
         add(addWetMarketPanel, "card2");
@@ -366,27 +462,6 @@ public class WetMarketTestPanel extends javax.swing.JPanel {
             }
         });
 
-        jPanel1.setBackground(new java.awt.Color(19, 37, 55));
-        jPanel1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.gray, java.awt.Color.gray, java.awt.Color.gray, java.awt.Color.gray));
-
-        jButton2.setText("jButton2");
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jButton2)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jButton2))
-        );
-
         barChartBtn.setBackground(new java.awt.Color(19, 37, 55));
         barChartBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/environment/view/icons/bar_chart_32px.png"))); // NOI18N
         barChartBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -406,14 +481,8 @@ public class WetMarketTestPanel extends javax.swing.JPanel {
             .addGroup(statPanelLayout.createSequentialGroup()
                 .addGroup(statPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(statPanelLayout.createSequentialGroup()
-                        .addGap(222, 222, 222)
-                        .addComponent(jLabel7)
-                        .addGap(0, 196, Short.MAX_VALUE))
-                    .addGroup(statPanelLayout.createSequentialGroup()
                         .addContainerGap()
-                        .addGroup(statPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING)))
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 694, Short.MAX_VALUE))
                     .addGroup(statPanelLayout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(statPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -427,14 +496,17 @@ public class WetMarketTestPanel extends javax.swing.JPanel {
                         .addGap(18, 18, 18)
                         .addComponent(updateBtn)))
                 .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, statPanelLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabel7)
+                .addGap(202, 202, 202))
         );
         statPanelLayout.setVerticalGroup(
             statPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(statPanelLayout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(8, 8, 8)
+                .addGap(23, 23, 23)
                 .addComponent(jLabel7)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(29, 29, 29)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 282, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(statPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -444,7 +516,7 @@ public class WetMarketTestPanel extends javax.swing.JPanel {
                                 .addComponent(updateBtn)
                                 .addComponent(removeBtn))
                             .addComponent(barChartBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
                         .addComponent(jButton1))
                     .addGroup(statPanelLayout.createSequentialGroup()
                         .addComponent(jLabel11)
@@ -453,56 +525,6 @@ public class WetMarketTestPanel extends javax.swing.JPanel {
         );
 
         add(statPanel, "card3");
-
-        loginPanel.setBackground(new java.awt.Color(44, 62, 80));
-
-        jLabel8.setText("LOGIN");
-
-        jLabel9.setText("Username");
-
-        jLabel10.setText("Password");
-
-        jTextField5.setText("jTextField5");
-
-        jPasswordField1.setText("jPasswordField1");
-
-        javax.swing.GroupLayout loginPanelLayout = new javax.swing.GroupLayout(loginPanel);
-        loginPanel.setLayout(loginPanelLayout);
-        loginPanelLayout.setHorizontalGroup(
-            loginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(loginPanelLayout.createSequentialGroup()
-                .addGroup(loginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(loginPanelLayout.createSequentialGroup()
-                        .addGap(313, 313, 313)
-                        .addComponent(jLabel8))
-                    .addGroup(loginPanelLayout.createSequentialGroup()
-                        .addGap(179, 179, 179)
-                        .addGroup(loginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel9)
-                            .addComponent(jLabel10))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
-                        .addGroup(loginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jTextField5)
-                            .addComponent(jPasswordField1, javax.swing.GroupLayout.DEFAULT_SIZE, 142, Short.MAX_VALUE))))
-                .addGap(284, 284, 284))
-        );
-        loginPanelLayout.setVerticalGroup(
-            loginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(loginPanelLayout.createSequentialGroup()
-                .addGap(79, 79, 79)
-                .addComponent(jLabel8)
-                .addGap(92, 92, 92)
-                .addGroup(loginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel9)
-                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(loginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel10)
-                    .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(266, Short.MAX_VALUE))
-        );
-
-        add(loginPanel, "card4");
     }// </editor-fold>//GEN-END:initComponents
 
     private void nextStatisticBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nextStatisticBtnActionPerformed
@@ -571,7 +593,7 @@ public class WetMarketTestPanel extends javax.swing.JPanel {
             } catch (IOException ex) {
                 ex.printStackTrace();
             }
-        }else{
+        } else {
             JOptionPane.showMessageDialog(null, "Select a row !", "Error", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_removeBtnActionPerformed
@@ -618,7 +640,7 @@ public class WetMarketTestPanel extends javax.swing.JPanel {
                 Logger.getLogger(WetMarketTestPanel.class.getName()).log(Level.SEVERE, null, ex);
             }
 
-        }else{
+        } else {
             JOptionPane.showMessageDialog(null, "Select a row !", "Error", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_updateBtnActionPerformed
@@ -675,6 +697,40 @@ public class WetMarketTestPanel extends javax.swing.JPanel {
 
     }//GEN-LAST:event_barChartBtnActionPerformed
 
+    private void loginBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginBtnActionPerformed
+        String username = usernameField.getText();
+        String password = passwordField.getText();
+
+        if (username.equals(this.USERNAME) && password.equals(this.PASSWORD)) {
+            removeAll();
+            repaint();
+            revalidate();
+
+            add(addWetMarketPanel);
+            repaint();
+            revalidate();
+
+            helloLabel.setText("Hello admin!");
+            
+            usernameField.setText("");
+            passwordField.setText("");
+
+        } else {
+            loginNotifier.setText("Login Failed ");
+        }
+
+    }//GEN-LAST:event_loginBtnActionPerformed
+
+    private void logoutBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logoutBtnMouseClicked
+        removeAll();
+        repaint();
+        revalidate();
+
+        add(loginPanel);
+        repaint();
+        revalidate();
+    }//GEN-LAST:event_logoutBtnMouseClicked
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addBtn;
@@ -683,16 +739,15 @@ public class WetMarketTestPanel extends javax.swing.JPanel {
     private javax.swing.JButton barChartBtn;
     private javax.swing.ButtonGroup buttonGroup1;
     private datechooser.beans.DateChooserCombo dateChooserCombo1;
+    private javax.swing.JLabel helloLabel;
     private javax.swing.JTextField idField;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -700,20 +755,22 @@ public class WetMarketTestPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
-    private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField locationField;
+    private javax.swing.JButton loginBtn;
+    private javax.swing.JLabel loginNotifier;
     private javax.swing.JPanel loginPanel;
+    private javax.swing.JLabel logoutBtn;
     private javax.swing.JButton nextStatisticBtn;
+    private javax.swing.JPasswordField passwordField;
     private javax.swing.JButton removeBtn;
     private javax.swing.JPanel statPanel;
     private javax.swing.JTextField testedAnimalField;
     private javax.swing.JButton updateBtn;
+    private javax.swing.JTextField usernameField;
     private javax.swing.JTextField wetMarketNameField;
     // End of variables declaration//GEN-END:variables
 }

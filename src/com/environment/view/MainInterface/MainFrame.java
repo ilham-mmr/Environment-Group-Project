@@ -3,15 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.environment.view;
+package com.environment.view.MainInterface;
 
+
+import com.environment.view.wetmarketinterface.WetMarketTestPanel;
 import java.awt.Color;
-import org.jfree.chart.ChartFactory;
-import org.jfree.chart.ChartFrame;
-import org.jfree.chart.JFreeChart;
-import org.jfree.chart.plot.CategoryPlot;
-import org.jfree.chart.plot.PlotOrientation;
-import org.jfree.data.category.DefaultCategoryDataset;
+import javax.swing.SwingUtilities;
+
 
 /**
  *
@@ -24,8 +22,9 @@ public class MainFrame extends javax.swing.JFrame {
      */
     public MainFrame() {
         initComponents();
-        FruitPanel fruitPanel = new FruitPanel();
-        fruitBasePanel.add(fruitPanel, "card2");
+//        FruitPanel fruitPanel = new FruitPanel();
+//        fruitBasePanel.add(fruitPanel, "card2");
+
         WetMarketTestPanel wetMarketTestPanel = new WetMarketTestPanel();
         wetMarketBasePanel.add(wetMarketTestPanel,"card 1");
 
