@@ -6,6 +6,10 @@
 package com.environment.view.MainInterface;
 
 
+
+import com.environment.view.Flower.Flowers;
+import com.environment.view.bookPanel.Book;
+
 import com.environment.view.wetmarketinterface.WetMarketTestPanel;
 import java.awt.Color;
 import javax.swing.SwingUtilities;
@@ -27,6 +31,12 @@ public class MainFrame extends javax.swing.JFrame {
 
         WetMarketTestPanel wetMarketTestPanel = new WetMarketTestPanel();
         wetMarketBasePanel.add(wetMarketTestPanel,"card 1");
+        
+        Flowers flower = new Flowers();
+        flowersBasePanel.add(flower);
+        
+        Book book = new Book();
+        bookBasePanel.add(book);
 
     }
 
@@ -61,8 +71,7 @@ public class MainFrame extends javax.swing.JFrame {
         wetMarketBasePanel = new javax.swing.JPanel();
         fruitBasePanel = new javax.swing.JPanel();
         flowersBasePanel = new javax.swing.JPanel();
-        bookPanel = new javax.swing.JPanel();
-        jLabel18 = new javax.swing.JLabel();
+        bookBasePanel = new javax.swing.JPanel();
         foodPanel = new javax.swing.JPanel();
         jLabel19 = new javax.swing.JLabel();
 
@@ -424,13 +433,9 @@ public class MainFrame extends javax.swing.JFrame {
         flowersBasePanel.setLayout(new java.awt.CardLayout());
         contentPanel.add(flowersBasePanel, "card4");
 
-        bookPanel.setPreferredSize(new java.awt.Dimension(700, 500));
-        bookPanel.setLayout(new java.awt.CardLayout());
-
-        jLabel18.setText("YOU ARE IN BOOK PANEL");
-        bookPanel.add(jLabel18, "card2");
-
-        contentPanel.add(bookPanel, "card5");
+        bookBasePanel.setPreferredSize(new java.awt.Dimension(700, 500));
+        bookBasePanel.setLayout(new java.awt.CardLayout());
+        contentPanel.add(bookBasePanel, "card5");
 
         foodPanel.setPreferredSize(new java.awt.Dimension(700, 500));
         foodPanel.setLayout(new java.awt.CardLayout());
@@ -559,7 +564,7 @@ public class MainFrame extends javax.swing.JFrame {
         contentPanel.repaint();
         contentPanel.revalidate();
 
-        contentPanel.add(bookPanel);
+        contentPanel.add(bookBasePanel);
         contentPanel.repaint();
         contentPanel.revalidate();
     }//GEN-LAST:event_bookBtnMouseClicked
@@ -663,8 +668,8 @@ public class MainFrame extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel basePanel;
+    private javax.swing.JPanel bookBasePanel;
     private javax.swing.JPanel bookBtn;
-    private javax.swing.JPanel bookPanel;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JPanel contentPanel;
     private javax.swing.JPanel exitBtn;
@@ -679,7 +684,6 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel7;
