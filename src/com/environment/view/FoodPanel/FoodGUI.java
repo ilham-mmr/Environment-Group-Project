@@ -17,7 +17,7 @@ import javax.swing.DefaultListModel;
 
 /**
  *
- * 
+ * @author Cheng Wai Hou
  */
 public class FoodGUI extends javax.swing.JPanel {
  private List<FoodInfo> list;

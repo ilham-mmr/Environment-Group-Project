@@ -22,7 +22,7 @@ import javax.swing.table.DefaultTableModel;
  */
 /**
  *
- * @author Acer
+ * @author Chin Shu Hui
  */
 public final class Flowers extends javax.swing.JPanel {
 private final List<FlowerData> list;

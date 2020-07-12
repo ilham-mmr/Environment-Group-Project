@@ -9,7 +9,7 @@ import Project.FruitSupplyGUI;
 
 /**
  *
- * @author Ilham MMR <ilham.mmr@gmail.com>
+ * @author Khansa Vieba
  */
 public class FruitGUI {
     FruitSupplyGUI fruitSupplyGUI;

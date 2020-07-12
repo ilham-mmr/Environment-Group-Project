@@ -11,7 +11,7 @@ import java.io.Serializable;
 
 /**
  *
- * @author user-pc
+ * @author Cheng Wai Hou
  */
 public class FoodInfo implements Serializable{
 

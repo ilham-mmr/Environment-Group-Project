@@ -1,7 +1,10 @@
 package com.environment.view.bookPanel;
 
 import java.io.Serializable;
-
+/**
+ * 
+ * @author Goh Fang Yao
+ */
 public class BookInfo implements Serializable {
 
     String title;
