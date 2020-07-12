@@ -85,7 +85,6 @@ public final class Book extends javax.swing.JPanel {
         SEARCH = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
-        EXIT = new javax.swing.JButton();
         RESET = new javax.swing.JButton();
 
         setMaximumSize(new java.awt.Dimension(32767, 500));
@@ -160,13 +159,7 @@ public final class Book extends javax.swing.JPanel {
         ));
         jScrollPane1.setViewportView(jTable1);
 
-        EXIT.setFont(new java.awt.Font("Times New Roman", 1, 15)); 
-        EXIT.setText("EXIT");
-        EXIT.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                EXITActionPerformed(evt);
-            }
-        });
+       
 
         RESET.setFont(new java.awt.Font("Times New Roman", 1, 15)); 
         RESET.setText("RESET");
@@ -197,7 +190,7 @@ public final class Book extends javax.swing.JPanel {
         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
         .addComponent(RESET)
         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        .addComponent(EXIT))
+        )
         .addGroup(layout.createSequentialGroup()
         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
         .addComponent(BookTitle)
@@ -252,7 +245,7 @@ public final class Book extends javax.swing.JPanel {
             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(EXIT)
+            
             .addComponent(RESET))
             .addContainerGap(92, Short.MAX_VALUE))
         );
@@ -290,11 +283,7 @@ public final class Book extends javax.swing.JPanel {
 
     }
 
-    private void EXITActionPerformed(java.awt.event.ActionEvent evt) {
-        System.exit(0);
-      
-    }
-
+   
     private void DELETEActionPerformed(java.awt.event.ActionEvent evt) {
         DefaultTableModel tableModel = (DefaultTableModel) jTable1.getModel();
         int dialogButton = JOptionPane.YES_NO_OPTION;
@@ -380,7 +369,6 @@ public final class Book extends javax.swing.JPanel {
     private javax.swing.JLabel Category;
     private javax.swing.JButton DELETE;
     private javax.swing.JButton EDIT;
-    private javax.swing.JButton EXIT;
     private javax.swing.JLabel Quantity;
     private javax.swing.JLabel Reason;
     private javax.swing.JLabel BookTitle;

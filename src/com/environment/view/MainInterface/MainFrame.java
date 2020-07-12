@@ -7,11 +7,14 @@ package com.environment.view.MainInterface;
 
 import Project.FruitSupplyGUI;
 import com.environment.view.Flower.Flowers;
+import com.environment.view.FoodPanel.FoodGUI;
+
 import com.environment.view.FruitPanel.FruitGUI;
 import com.environment.view.bookPanel.Book;
 
 import com.environment.view.wetmarketinterface.WetMarketTestPanel;
 import java.awt.Color;
+import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
 
 /**
@@ -25,8 +28,7 @@ public class MainFrame extends javax.swing.JFrame {
      */
     public MainFrame() {
         initComponents();
-//        FruitPanel fruitPanel = new FruitPanel();
-//        fruitBasePanel.add(fruitPanel, "card2");
+       
 
         WetMarketTestPanel wetMarketTestPanel = new WetMarketTestPanel();
         wetMarketBasePanel.add(wetMarketTestPanel, "card 1");
@@ -36,8 +38,12 @@ public class MainFrame extends javax.swing.JFrame {
 
         Book book = new Book();
         bookBasePanel.add(book);
+        
         FruitGUI fruitGUI = new FruitGUI();
         fruitBasePanel.add(fruitGUI.getFruitSupplyGUI());
+        
+        FoodGUI food = new FoodGUI();
+        foodBasePanel.add(food);
 
     }
 
@@ -71,14 +77,21 @@ public class MainFrame extends javax.swing.JFrame {
         homeBtn = new javax.swing.JPanel();
         wetMarketLable1 = new javax.swing.JLabel();
         contentPanel = new javax.swing.JPanel();
+        wetMarketBasePanel = new javax.swing.JPanel();
         homePanel = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
-        wetMarketBasePanel = new javax.swing.JPanel();
+        jLabel4 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel7 = new javax.swing.JLabel();
+        jSeparator1 = new javax.swing.JSeparator();
         fruitBasePanel = new javax.swing.JPanel();
         flowersBasePanel = new javax.swing.JPanel();
         bookBasePanel = new javax.swing.JPanel();
         foodBasePanel = new javax.swing.JPanel();
-        jLabel19 = new javax.swing.JLabel();
 
         jLabel14.setText("jLabel14");
 
@@ -93,7 +106,7 @@ public class MainFrame extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("Dubai", 1, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(200, 200, 200));
-        jLabel2.setText("ENVIRONMENT");
+        jLabel2.setText("GREEN-VID");
 
         fruitBtn.setBackground(new java.awt.Color(41, 128, 185));
         fruitBtn.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.white, java.awt.Color.white, java.awt.Color.white, java.awt.Color.white));
@@ -407,7 +420,7 @@ public class MainFrame extends javax.swing.JFrame {
         homeBtn.setLayout(homeBtnLayout);
         homeBtnLayout.setHorizontalGroup(
             homeBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 119, Short.MAX_VALUE)
             .addGroup(homeBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(homeBtnLayout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
@@ -429,22 +442,24 @@ public class MainFrame extends javax.swing.JFrame {
         menuPanelLayout.setHorizontalGroup(
             menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(menuPanelLayout.createSequentialGroup()
-                .addContainerGap(21, Short.MAX_VALUE)
+                .addContainerGap(13, Short.MAX_VALUE)
                 .addGroup(menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, menuPanelLayout.createSequentialGroup()
                         .addGroup(menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(fruitBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(flowerBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(bookBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(foodBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(exitBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(wetMarketBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(homeBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(15, 15, 15))
+                            .addComponent(homeBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap())
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, menuPanelLayout.createSequentialGroup()
+                        .addComponent(jLabel2)
+                        .addGap(22, 22, 22))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, menuPanelLayout.createSequentialGroup()
                         .addComponent(jLabel1)
-                        .addGap(51, 51, 51))))
+                        .addGap(38, 38, 38))))
         );
         menuPanelLayout.setVerticalGroup(
             menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -453,7 +468,7 @@ public class MainFrame extends javax.swing.JFrame {
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel2)
-                .addGap(21, 21, 21)
+                .addGap(18, 18, 18)
                 .addComponent(homeBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(wetMarketBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -467,7 +482,7 @@ public class MainFrame extends javax.swing.JFrame {
                 .addComponent(foodBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(exitBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(65, 65, 65))
+                .addGap(68, 68, 68))
         );
 
         contentPanel.setBackground(new java.awt.Color(44, 62, 80));
@@ -475,34 +490,125 @@ public class MainFrame extends javax.swing.JFrame {
         contentPanel.setMaximumSize(new java.awt.Dimension(500, 700));
         contentPanel.setLayout(new java.awt.CardLayout());
 
+        wetMarketBasePanel.setBackground(new java.awt.Color(44, 62, 80));
+        wetMarketBasePanel.setPreferredSize(new java.awt.Dimension(700, 500));
+        wetMarketBasePanel.setLayout(new java.awt.CardLayout());
+
         homePanel.setBackground(new java.awt.Color(44, 62, 80));
         homePanel.setToolTipText("");
         homePanel.setPreferredSize(new java.awt.Dimension(700, 500));
 
-        jLabel3.setText("HOME PANEL BOSQUEEE");
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/environment/view/icons/help_32px.png"))); // NOI18N
+        jLabel3.setText("ABOUT");
+        jLabel3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel3MouseClicked(evt);
+            }
+        });
+
+        jLabel4.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setText("WELCOME TO GREEN-VID ");
+
+        jTextArea1.setEditable(false);
+        jTextArea1.setBackground(new java.awt.Color(44, 62, 80));
+        jTextArea1.setColumns(20);
+        jTextArea1.setForeground(new java.awt.Color(255, 255, 255));
+        jTextArea1.setRows(5);
+        jTextArea1.setText("SOME SECTORS HAVE BEEN AFFECTED DUE TO COVID -19. \nENVIRONMENT-BASED SECTORS ARE AMONG THE IMPACTED ONES.\nGREEN-VID HELPS YOU TO GET COVID-19 RELATED INFORMATION EASIER.\n\n\n");
+        jScrollPane1.setViewportView(jTextArea1);
+
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setText("BACKGROUND:");
+
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/environment/view/icons/icons8-environment-care-52.png"))); // NOI18N
+
+        jPanel1.setBackground(new java.awt.Color(44, 62, 80));
+        jPanel1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.white, java.awt.Color.white, java.awt.Color.white, java.awt.Color.white));
+
+        jLabel7.setBackground(new java.awt.Color(0, 102, 153));
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/environment/view/icons/sincerely-media-UfhZRbjlDus-unsplash.jpg"))); // NOI18N
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel7)
+                .addContainerGap())
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
 
         javax.swing.GroupLayout homePanelLayout = new javax.swing.GroupLayout(homePanel);
         homePanel.setLayout(homePanelLayout);
         homePanelLayout.setHorizontalGroup(
             homePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, homePanelLayout.createSequentialGroup()
+                .addContainerGap(127, Short.MAX_VALUE)
+                .addGroup(homePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, homePanelLayout.createSequentialGroup()
+                        .addComponent(jLabel4)
+                        .addGap(182, 182, 182))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, homePanelLayout.createSequentialGroup()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 477, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(112, 112, 112))))
             .addGroup(homePanelLayout.createSequentialGroup()
-                .addGap(239, 239, 239)
-                .addComponent(jLabel3)
-                .addContainerGap(326, Short.MAX_VALUE))
+                .addGroup(homePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, homePanelLayout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel6)
+                        .addGap(234, 234, 234)
+                        .addComponent(jLabel3))
+                    .addGroup(homePanelLayout.createSequentialGroup()
+                        .addGroup(homePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(homePanelLayout.createSequentialGroup()
+                                .addGap(207, 207, 207)
+                                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(homePanelLayout.createSequentialGroup()
+                                .addGap(30, 30, 30)
+                                .addComponent(jLabel5)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, homePanelLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 351, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(174, 174, 174))
         );
         homePanelLayout.setVerticalGroup(
             homePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(homePanelLayout.createSequentialGroup()
-                .addGap(197, 197, 197)
-                .addComponent(jLabel3)
-                .addContainerGap(303, Short.MAX_VALUE))
+                .addContainerGap()
+                .addGroup(homePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(homePanelLayout.createSequentialGroup()
+                        .addComponent(jLabel3)
+                        .addGap(129, 129, 129))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, homePanelLayout.createSequentialGroup()
+                        .addComponent(jLabel6)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel4)
+                        .addGap(48, 48, 48)
+                        .addComponent(jLabel5)
+                        .addGap(7, 7, 7)))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(30, 30, 30)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(28, 28, 28)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(49, Short.MAX_VALUE))
         );
 
-        contentPanel.add(homePanel, "card3");
+        wetMarketBasePanel.add(homePanel, "card3");
 
-        wetMarketBasePanel.setBackground(new java.awt.Color(44, 62, 80));
-        wetMarketBasePanel.setPreferredSize(new java.awt.Dimension(700, 500));
-        wetMarketBasePanel.setLayout(new java.awt.CardLayout());
         contentPanel.add(wetMarketBasePanel, "card2");
 
         fruitBasePanel.setPreferredSize(new java.awt.Dimension(700, 500));
@@ -519,10 +625,6 @@ public class MainFrame extends javax.swing.JFrame {
 
         foodBasePanel.setPreferredSize(new java.awt.Dimension(700, 500));
         foodBasePanel.setLayout(new java.awt.CardLayout());
-
-        jLabel19.setText("YOU ARE IN FOOD PANEL");
-        foodBasePanel.add(jLabel19, "card2");
-
         contentPanel.add(foodBasePanel, "card6");
 
         javax.swing.GroupLayout basePanelLayout = new javax.swing.GroupLayout(basePanel);
@@ -557,7 +659,7 @@ public class MainFrame extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
-        setSize(new java.awt.Dimension(909, 571));
+        setSize(new java.awt.Dimension(890, 571));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -737,6 +839,19 @@ public class MainFrame extends javax.swing.JFrame {
          homeBtn.setBackground(new Color(41, 128, 185));
     }//GEN-LAST:event_homeBtnMouseReleased
 
+    private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
+        JOptionPane.showMessageDialog(null, "DEVELOPED BY"
+            + "\n"
+            + "\nGroup Leader : Rachmat Ilham Muslim Maulana (268954)"
+            + "\n"
+            + "\nGroup Members:"
+            + "\nSusilo Khansa Vieba Ramadhania (269351)"
+            + "\nChin Shu Hui (270419)"
+            + "\nGoh Fang Yao (270654)"
+            + "\nCheng Wai Hou (269817)"
+            , "About", JOptionPane.QUESTION_MESSAGE);
+    }//GEN-LAST:event_jLabel3MouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -792,11 +907,18 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JPanel menuPanel;
     private javax.swing.JPanel wetMarketBasePanel;
     private javax.swing.JPanel wetMarketBtn;

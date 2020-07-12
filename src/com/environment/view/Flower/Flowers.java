@@ -1,6 +1,7 @@
 package com.environment.view.Flower;
 
 
+import com.environment.view.MainInterface.MainFrame;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -96,7 +97,6 @@ private final List<FlowerData> list;
         SEARCH = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
-        EXIT = new javax.swing.JButton();
         RESET = new javax.swing.JButton();
 
         setMaximumSize(new java.awt.Dimension(700, 500));
@@ -174,14 +174,6 @@ private final List<FlowerData> list;
         });
         jScrollPane1.setViewportView(jTable1);
 
-        EXIT.setFont(new java.awt.Font("Times New Roman", 1, 15)); // NOI18N
-        EXIT.setText("EXIT");
-        EXIT.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                EXITActionPerformed(evt);
-            }
-        });
-
         RESET.setFont(new java.awt.Font("Times New Roman", 1, 15)); // NOI18N
         RESET.setText("RESET");
         RESET.addActionListener(new java.awt.event.ActionListener() {
@@ -197,10 +189,6 @@ private final List<FlowerData> list;
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(RESET)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(EXIT))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(HealthBenifits)
@@ -221,10 +209,12 @@ private final List<FlowerData> list;
                                 .addComponent(EDIT, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(125, 125, 125)
                                 .addComponent(SEARCH))))
+                    .addComponent(jScrollPane1)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(CommonUses)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(jScrollPane1))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(RESET)
+                            .addComponent(CommonUses))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -253,9 +243,7 @@ private final List<FlowerData> list;
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 209, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(EXIT)
-                    .addComponent(RESET))
+                .addComponent(RESET)
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -288,11 +276,6 @@ private final List<FlowerData> list;
         jTextHealthBenifits.setText("");
         jCBCommonUses.setSelectedIndex(0);
     }//GEN-LAST:event_ADDActionPerformed
-
-    private void EXITActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EXITActionPerformed
-        System.exit(0);
-        // TODO add your handling code here:
-    }//GEN-LAST:event_EXITActionPerformed
 
     private void DELETEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DELETEActionPerformed
         // TODO add your handling code here:        
@@ -389,7 +372,6 @@ private final List<FlowerData> list;
     private javax.swing.JLabel CommonUses;
     private javax.swing.JButton DELETE;
     private javax.swing.JButton EDIT;
-    private javax.swing.JButton EXIT;
     private javax.swing.JLabel HealthBenifits;
     private javax.swing.JLabel Name;
     private javax.swing.JButton RESET;
