@@ -77,7 +77,6 @@ public class MainFrame extends javax.swing.JFrame {
         homeBtn = new javax.swing.JPanel();
         wetMarketLable1 = new javax.swing.JLabel();
         contentPanel = new javax.swing.JPanel();
-        wetMarketBasePanel = new javax.swing.JPanel();
         homePanel = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -88,6 +87,7 @@ public class MainFrame extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
+        wetMarketBasePanel = new javax.swing.JPanel();
         fruitBasePanel = new javax.swing.JPanel();
         flowersBasePanel = new javax.swing.JPanel();
         bookBasePanel = new javax.swing.JPanel();
@@ -490,10 +490,6 @@ public class MainFrame extends javax.swing.JFrame {
         contentPanel.setMaximumSize(new java.awt.Dimension(500, 700));
         contentPanel.setLayout(new java.awt.CardLayout());
 
-        wetMarketBasePanel.setBackground(new java.awt.Color(44, 62, 80));
-        wetMarketBasePanel.setPreferredSize(new java.awt.Dimension(700, 500));
-        wetMarketBasePanel.setLayout(new java.awt.CardLayout());
-
         homePanel.setBackground(new java.awt.Color(44, 62, 80));
         homePanel.setToolTipText("");
         homePanel.setPreferredSize(new java.awt.Dimension(700, 500));
@@ -607,8 +603,11 @@ public class MainFrame extends javax.swing.JFrame {
                 .addContainerGap(49, Short.MAX_VALUE))
         );
 
-        wetMarketBasePanel.add(homePanel, "card3");
+        contentPanel.add(homePanel, "card3");
 
+        wetMarketBasePanel.setBackground(new java.awt.Color(44, 62, 80));
+        wetMarketBasePanel.setPreferredSize(new java.awt.Dimension(700, 500));
+        wetMarketBasePanel.setLayout(new java.awt.CardLayout());
         contentPanel.add(wetMarketBasePanel, "card2");
 
         fruitBasePanel.setPreferredSize(new java.awt.Dimension(700, 500));
