@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.environment.view.FruitPanel;
+package com.environment.view.fruitInterface;
 
 import Project.FruitSupplyGUI;
 

@@ -6,11 +6,11 @@
 package com.environment.view.MainInterface;
 
 import Project.FruitSupplyGUI;
-import com.environment.view.Flower.Flowers;
-import com.environment.view.FoodPanel.FoodGUI;
+import com.environment.view.flowerInterface.Flowers;
+import com.environment.view.foodInterface.FoodGUI;
 
-import com.environment.view.FruitPanel.FruitGUI;
-import com.environment.view.bookPanel.Book;
+import com.environment.view.fruitInterface.FruitGUI;
+import com.environment.view.bookInterface.Book;
 
 import com.environment.view.wetmarketinterface.WetMarketTestPanel;
 import java.awt.Color;

@@ -1,4 +1,4 @@
-package com.environment.view.FoodPanel;
+package com.environment.view.foodInterface;
 
 
 import java.io.Serializable;
