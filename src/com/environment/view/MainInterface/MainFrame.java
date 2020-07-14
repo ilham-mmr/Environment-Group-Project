@@ -5,7 +5,6 @@
  */
 package com.environment.view.MainInterface;
 
-import Project.FruitSupplyGUI;
 import com.environment.view.flowerInterface.Flowers;
 import com.environment.view.foodInterface.FoodGUI;
 
@@ -15,7 +14,6 @@ import com.environment.view.bookInterface.Book;
 import com.environment.view.wetmarketinterface.WetMarketTestPanel;
 import java.awt.Color;
 import javax.swing.JOptionPane;
-import javax.swing.SwingUtilities;
 
 /**
  *
@@ -27,6 +25,7 @@ public class MainFrame extends javax.swing.JFrame {
      * Creates new form MainFrame
      */
     public MainFrame() {
+        
         initComponents();
        
 
@@ -96,6 +95,7 @@ public class MainFrame extends javax.swing.JFrame {
         jLabel14.setText("jLabel14");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("GREEN-VID");
         setResizable(false);
 
         basePanel.setBackground(new java.awt.Color(45, 52, 54));
