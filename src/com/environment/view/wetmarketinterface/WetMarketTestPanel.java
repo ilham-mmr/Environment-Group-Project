@@ -223,6 +223,7 @@ public class WetMarketTestPanel extends javax.swing.JPanel {
         jRadioButton1.setActionCommand("POSITIVE");
 
         dateChooserCombo1.setCalendarBackground(new java.awt.Color(204, 204, 204));
+        dateChooserCombo1.setCalendarPreferredSize(new java.awt.Dimension(400, 400));
         dateChooserCombo1.setNavigateFont(new java.awt.Font("Dialog", java.awt.Font.PLAIN, 11));
 
         jLabel5.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
@@ -475,12 +476,10 @@ public class WetMarketTestPanel extends javax.swing.JPanel {
         statPanelLayout.setHorizontalGroup(
             statPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(statPanelLayout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(statPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 694, Short.MAX_VALUE)
                     .addGroup(statPanelLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 694, Short.MAX_VALUE))
-                    .addGroup(statPanelLayout.createSequentialGroup()
-                        .addContainerGap()
                         .addGroup(statPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jButton1)
                             .addGroup(statPanelLayout.createSequentialGroup()
